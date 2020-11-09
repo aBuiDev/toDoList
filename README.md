@@ -275,7 +275,7 @@ Compute Common aims to streamline the buying, selling and trading of second-hand
 ## **R14** | An ERD for your app:
 ####
 
-![img](./public/erd_00.svg)
+![img](./public/dd_00_erd.svg)
 
 #
 
@@ -299,12 +299,12 @@ Compute Common aims to streamline the buying, selling and trading of second-hand
 ####
 
 * user
-  - A user has_one :user_details
-  - A user has_one :user_address
-  - A user has_one :ratings
-  - A user has_one :active_storage_attachments
-  - A user has_one :user_client
-  - A user has_one :user_designer
+  - user has_one :user_details
+  - user has_one :user_address
+  - user has_one :ratings
+  - user has_one_attached :image
+  - user has_one :user_client
+  - user has_one :user_designer
 
 * user_details
   - user_details belongs_to :user
@@ -312,26 +312,26 @@ Compute Common aims to streamline the buying, selling and trading of second-hand
 * user_address
   - user_address belongs_to :user
 
-* ratings
-  - user_ratings belongs_to :user
-  - user_ratings has_many :user_client
-  - user_ratings has_many :user_designer
-
 * active_storage_attachments
   - belongs_to :user
   - belongs_to :project
 
-* user_designer
-  - belongs_to user
-  - has_many :project
-
-* user_client
-  - belongs_to user
-  - has_many :project
-
 * project
   - belongs_to :user_client
   - belongs_to :user_designer
+  - has_one_attached :image
+
+* user_client
+  - has_many :ratings
+  - has_many :user_designers, through: :ratings
+
+* rating
+  - belongs_to :user_client
+  - belongs_to :user_designer
+  
+* user_designer
+  - has_many :ratings
+  - has_many :user_clients, through: :ratings
 
 #
 
