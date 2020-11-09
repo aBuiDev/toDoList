@@ -298,6 +298,41 @@ Compute Common aims to streamline the buying, selling and trading of second-hand
 ## **R17** | Describe your projects models in terms of the relationships (active record associations) they have with each other:
 ####
 
+* user
+  - A user has_one :user_details
+  - A user has_one :user_address
+  - A user has_one :ratings
+  - A user has_one :active_storage_attachments
+  - A user has_one :user_client
+  - A user has_one :user_designer
+
+* user_details
+  - user_details belongs_to :user
+
+* user_address
+  - user_address belongs_to :user
+
+* ratings
+  - user_ratings belongs_to :user
+  - user_ratings has_many :user_client
+  - user_ratings has_many :user_designer
+
+* active_storage_attachments
+  - belongs_to :user
+  - belongs_to :project
+
+* user_designer
+  - belongs_to user
+  - has_many :project
+
+* user_client
+  - belongs_to user
+  - has_many :project
+
+* project
+  - belongs_to :user_client
+  - belongs_to :user_designer
+
 #
 
 <br>
