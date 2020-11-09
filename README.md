@@ -301,7 +301,7 @@ Compute Common aims to streamline the buying, selling and trading of second-hand
 * user
   - user has_one :user_details
   - user has_one :user_address
-  - user has_one :ratings
+  - user has_many :ratings
   - user has_one_attached :image
   - user has_one :user_client
   - user has_one :user_designer
