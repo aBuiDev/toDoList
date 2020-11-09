@@ -145,3 +145,22 @@ table {
 }
 
 @import "bootstrap";
+
+.homePageCoverSection {
+  background-image: url("artndesign_cover.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 1000px;
+}
+
+.homePageCoverContainer {
+  width: 100%;
+  border: solid 2px white;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
