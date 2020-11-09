@@ -146,6 +146,14 @@ table {
 
 @import "bootstrap";
 
+.notice {
+  display: none;
+}
+
+.alert {
+  display: none;
+}
+
 .homePageCoverSection {
   background-image: url("artndesign_cover.jpg");
   background-repeat: no-repeat;
@@ -157,10 +165,35 @@ table {
 
 .homePageCoverContainer {
   width: 100%;
-  border: solid 2px white;
+  border: solid 1px rgb(65, 65, 65);
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+}
+
+.homePageCoverNavBar {
+  width: 100%;
+  height: 100px;
+  border: solid 1px rgb(65, 65, 65);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homePageCoverNavBarLogo {
+  color: white;
+}
+
+.homePageCoverUserLogin {
+  margin: 0px 0px 50px 0px;
+  border: solid 1px rgb(65, 65, 65);
+  display: flex;
+  align-items: center;
+}
+
+.homePageCoverUserLoginForm {
+  display: flex;
   flex-direction: column;
 }

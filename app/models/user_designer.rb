@@ -1,0 +1,2 @@
+class UserDesigner < ApplicationRecord
+end
