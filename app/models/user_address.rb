@@ -1,2 +1,0 @@
-class UserAddress < ApplicationRecord
-end
