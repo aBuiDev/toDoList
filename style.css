@@ -88,4 +88,17 @@
 
 .mainSectionContainer {
   width: 1200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Task Output */
+.taskOutput {
+  width: 380px;
+  height: 500px;
+  margin: 10px;
+  background-color: rgb(231, 180, 255);
 }
