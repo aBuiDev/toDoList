@@ -1,17 +1,23 @@
 const taskInputButton = document.querySelector('.taskInputButton');
 const mainSectionContainer = document.querySelector('.mainSectionContainer');
 
+
+
 // Preload Mechanism
 const preLoad = function () {
 
     for (let i = 0; i < localStorage.length; i++) {
         const taskOutput = document.createElement('div');
+        taskOutput.classList.add('taskOutput');
         const taskNotesOutput = document.createElement('p');
+        taskNotesOutput.classList.add('taskNotesOutput');
+        const taskOutputControls = document.createElement('button');
+        taskOutputControls.classList.add('taskOutputControls');
+        taskOutputControls.classList.add('far');
+        taskOutputControls.classList.add('fa-check-circle');
         taskNotesOutput.textContent = localStorage.key(i);
         taskOutput.classList.add('taskOutput');
         taskOutput.appendChild(taskNotesOutput);
-        const taskOutputControls = document.createElement('button');
-        taskOutputControls.textContent = "Close Task"
         mainSectionContainer.appendChild(taskOutput).appendChild(taskOutputControls);
     }
 }
@@ -25,21 +31,26 @@ preLoad();
 const createTask = function (event) {
     event.preventDefault();
 
-    // Task Output Container
-    const taskOutput = document.createElement('div');
-    const taskNotesOutput = document.createElement('p');
-    
-    localStorage.setItem(taskInput.value, "note");
+    if (taskInput.value === '') {
+        console.log("Cannot Create Empty Task");
+    } else {
+        // Task Output Container
+        const taskOutput = document.createElement('div');
+        taskOutput.classList.add('taskOutput');
+        const taskNotesOutput = document.createElement('p');
+        taskNotesOutput.classList.add('taskNotesOutput');
+        const taskOutputControls = document.createElement('button');
+        taskOutputControls.classList.add('taskOutputControls');
+        taskOutputControls.classList.add('far');
+        taskOutputControls.classList.add('fa-check-circle');
 
-    taskNotesOutput.textContent = taskInput.value;
+        localStorage.setItem(taskInput.value, "note");
 
-    taskOutput.classList.add('taskOutput');
-    taskOutput.appendChild(taskNotesOutput);
-
-    const taskOutputControls = document.createElement('button');
-    taskOutputControls.textContent = "Close Task"
-
-    mainSectionContainer.appendChild(taskOutput).appendChild(taskOutputControls);
+        taskNotesOutput.textContent = taskInput.value;
+        
+        taskOutput.appendChild(taskNotesOutput);
+        mainSectionContainer.appendChild(taskOutput).appendChild(taskOutputControls);
+    }
 }
 
 // Create Task Event Listener
@@ -51,8 +62,6 @@ taskInputButton.addEventListener('click', createTask);
 mainSectionContainer.addEventListener('click', function (event) {
     event.preventDefault();
     console.log(event.target.previousSibling);
-
-
     if (event.target.matches('button')) {
         for (let i = 0; i < localStorage.length; i++) {
             if (localStorage.key(i).toString() === event.target.previousSibling.textContent) {

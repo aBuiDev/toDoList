@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Satisfy&display=swap');
+
 .navSection {
   width: 100%;
   height: 150px;
@@ -20,6 +22,7 @@
 }
 
 .navButtonsContainer {
+  font-family: 'Quicksand', sans-serif;
   width: 300px;
   display: flex;
   flex-direction: row;
@@ -37,6 +40,7 @@
 }
 
 .mainSectionTitle {
+  font-family: 'Quicksand', sans-serif;
   font-size: 50px;
   margin: 0px 0px 25px 0px;
 }
@@ -50,11 +54,13 @@
 }
 
 .taskInput {
+  font-family: 'Quicksand', sans-serif;
   width: 100%;
+  height: 100px;
+  padding: 0px 0px 0px 50px;
+  font-size: 30px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 20px;
   resize: none;
   margin: 0px 25px 0px 0px;
   border: 2px solid rgb(160, 160, 160);
@@ -67,23 +73,29 @@
 .taskInputButton {
   cursor: pointer;
   width: 150px;
-  height: 50px;
+  height: 104px;
   outline: none;
-  border: 2px solid rgb(162, 0, 255);
-  background-color: rgb(231, 180, 255);
+  border: 2px solid rgb(28, 121, 0);
+  background-color: rgb(40, 233, 50);
   transition: 0.1s;
-  color: rgb(108, 0, 158);
+  color: rgb(28, 121, 0);
+}
+
+.buttonIcon {
+  font-size: 50px;
 }
 
 .taskInputButton:hover {
-  background-color: rgb(162, 0, 255);
+  background-color: rgb(28, 121, 0);
   color: #fff;
 }
 
 .mainSectionTaskOutput {
+  font-family: 'Quicksand', sans-serif;
   width: 1200px;
-  height: 30px;
+  height: 50px;
   font-size: 20px;
+  text-align: center;
 }
 
 .mainSectionContainer {
@@ -98,7 +110,49 @@
 /* Task Output */
 .taskOutput {
   width: 380px;
-  height: 500px;
+  height: 380px;
   margin: 10px;
-  background-color: rgb(231, 180, 255);
+  background-image: url('./noteBackgroundImage.png');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.taskOutput p {
+  width: 260px;
+  font-family: 'Quicksand', sans-serif;
+  color: #fff;
+  font-size: 25px;
+  line-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+.taskOutput button {
+  position: absolute;
+  bottom: 70px;
+  right: 60px;
+}
+
+.taskOutput button:focus {
+  outline: none;
+}
+
+.taskOutputControls {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: rgb(117, 117, 117);
+  font-size: 30px;
+  transition: 0.1s ease-in;
+}
+
+.taskOutputControls:hover {
+  color: #fff;
 }
